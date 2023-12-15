@@ -6,9 +6,13 @@
     <title>Bottles of Beer</title>
 </head>
 <body>
-    <h1><%=numberBot%> Bottles of Beer</h1>
-    <a href="/<%=numberBot - 1%>">take one down</a>
-    <br>
-    <a href="/">Start Over</a>
+    <% if (numberBot >= 1) { %>
+        <h1><%=numberBot%> Bottles of Beer</h1>
+        <a href="/<%=numberBot - 1%>">take one down</a>
+     
+    <% } else { %>
+        <h1>No More Beer!</h1>
+        <a href="/">Start Over</a>
+    <% } %>
 </body>
 </html>
