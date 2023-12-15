@@ -20,14 +20,14 @@ const app = express()
 // route for index
 
 app.get("/", (req, res) => {
-    res.send(`<h1>99 Bottles of beer on the wall</h1>`)
+    res.send(`<h1>99 Bottles of beer on the wall</h1><a href="/98">take one down</a>`)
 })
 
 // route to number of bottle
 
 app.get("/:number_of_bottles", (req, res) => {
     const numberBot = req.params.number_of_bottles
-    res.send(`<h1>${numberBot} Bottles of beer on the wall</h1>`)
+    res.render("show.ejs", {numberBot})
 })
 
 
